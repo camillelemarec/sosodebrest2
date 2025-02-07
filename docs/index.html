@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soso de Brest</title>
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #ff69b4;
+            --accent-color: #ff69b4;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: var(--primary-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--secondary-color);
+        }
+        
+        .container {
+            text-align: center;
+            padding: 2rem;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+            color: var(--accent-color);
+        }
+        
+        .image-container {
+            position: relative;
+            margin: 2rem auto;
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .main-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soso de Brest</h1>
+        <div class="image-container">
+            <img id="soso-image" src="IMG_3010.jpg" alt="Soso de Brest" class="main-image">
+        </div>
+    </div>
+</body>
+</html> 
