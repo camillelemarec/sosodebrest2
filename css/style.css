@@ -1,0 +1,104 @@
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ff69b4;
+    --accent-color: #ff69b4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-color);
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+    color: var(--accent-color);
+}
+
+.image-container {
+    position: relative;
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 500px;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.audio-controls {
+    margin-top: 1rem;
+}
+
+#stop-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#stop-button:hover {
+    background-color: #ff8c66;
+}
+
+.hidden {
+    display: none;
+}
+
+.error-message {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    padding: 2rem;
+    border: 2px dashed var(--accent-color);
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+} 

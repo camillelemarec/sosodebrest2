@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soso de Brest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Soso de Brest</h1>
+        <div class="image-container">
+            <img id="soso-image" src="assets/images/IMG_3010.jpg" alt="Soso de Brest" class="main-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="error-message" style="display: none;">Image non trouvée</div>
+        </div>
+        <div class="audio-controls">
+            <button id="stop-button" class="hidden">Arrêter le son</button>
+        </div>
+        <audio id="soso-audio" src="assets/audio/soso.mp3"></audio>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html> 

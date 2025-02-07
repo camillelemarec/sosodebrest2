@@ -108,6 +108,22 @@
             box-shadow: 0 15px 30px rgba(255, 203, 5, 0.4);
         }
 
+        .main-image.playing {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1.05);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1.05);
+            }
+        }
+
         @keyframes bounce {
             0%, 100% {
                 transform: translateX(-50%) translateY(0);
@@ -144,7 +160,51 @@
         </div>
     </div>
 
+    <audio id="audio-player"></audio>
+
     <script>
+        // Liste des fichiers audio
+        const audioFiles = [
+            'records/soso1mp.mp3',
+            'records/soso2mp.mp3',
+            'records/soso3mp.mp3',
+            'records/soso4mp.mp3',
+            'records/soso5mp.mp3',
+            'records/sosomp.mp3'
+        ];
+
+        // Éléments du DOM
+        const sosoImage = document.getElementById('soso-image');
+        const audioPlayer = document.getElementById('audio-player');
+        let isPlaying = false;
+
+        // Fonction pour obtenir un fichier audio aléatoire
+        function getRandomAudio() {
+            const randomIndex = Math.floor(Math.random() * audioFiles.length);
+            return audioFiles[randomIndex];
+        }
+
+        // Gestion du clic sur l'image
+        sosoImage.addEventListener('click', () => {
+            if (isPlaying) {
+                audioPlayer.pause();
+                audioPlayer.currentTime = 0;
+                isPlaying = false;
+                sosoImage.classList.remove('playing');
+            } else {
+                audioPlayer.src = getRandomAudio();
+                audioPlayer.play();
+                isPlaying = true;
+                sosoImage.classList.add('playing');
+            }
+        });
+
+        // Quand l'audio se termine
+        audioPlayer.addEventListener('ended', () => {
+            isPlaying = false;
+            sosoImage.classList.remove('playing');
+        });
+
         // Animation de l'image au défilement
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
